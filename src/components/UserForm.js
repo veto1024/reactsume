@@ -54,6 +54,7 @@ export class UserForm extends Component {
 
     addHistory = e => {
         const defaultItem = {
+            num: this.state.myItems.length,
             companyEmail: '',
             companyPosition: '',
             bulletPoints1: '',
@@ -73,6 +74,7 @@ export class UserForm extends Component {
     addInstitute = e => {
 
         const defaultItem = {
+            num: this.state.myEducation.length,
             institution: '',
             gradDate: '',
             gpa: '',
@@ -89,6 +91,7 @@ export class UserForm extends Component {
 
     addAward = e => {
         const defaultItem = {
+            num: this.state.myAwards.length,
             award: '',
         }
         this.setState(state => {
@@ -102,6 +105,7 @@ export class UserForm extends Component {
 
     addSkill = e => {
         const defaultItem = {
+            num: this.state.mySkills.length,
             skill: '',
         }
         this.setState(state => {

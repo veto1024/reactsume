@@ -3,7 +3,7 @@ module.exports = ({full_name, email, phone, linkedin, myItems: [{companyName, co
         datesbulletPoints1, bulletPoints2, bulletPoints3, bulletPoints4,}], myEducation: [{institution, gradDate,
         gpa, degree,}], mySkills: [{skill,}], myAwards: [{ award:'',}]});*/
 
-module.exports = ({full_name, email, phone, linkedin, myItems, myEducation, mySkills, myAwards}) => {
+module.exports = ({fullName, email, phone, linkedin, myItems, myEducation, mySkills, myAwards}) => {
 var educationHTML = '';
 myEducation.forEach(function(item, index) {
     var htmlString = '';
@@ -126,7 +126,7 @@ myEducation.forEach(function(item, index) {
             <br/><br/>
             <div class="row text-center">
                 <div class="col-lg-6">
-                    <h1><b>${full_name}</b></h1>
+                    <h1><b>${fullName}</b></h1>
                     <p class="email"><strong>Email:</strong> ${email}</p>
                     <p class="mb-0"><strong>Contact:</strong> ${phone}</p>
                     <p class=""><strong>LinkedIn:</strong> ${linkedin}</p>
