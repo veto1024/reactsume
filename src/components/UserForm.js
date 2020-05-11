@@ -22,7 +22,6 @@ export class UserForm extends Component {
             phone: '',
             linkedin: '',
 
-            num_history: 1,
             myItems: [{
                 num: 0,
                 companyName: '',
@@ -34,7 +33,6 @@ export class UserForm extends Component {
                 bulletPoints3: '',
                 bulletPoints4: ''
             }],
-            num_institute: 1,
             myEducation: [{
                 num: 0,
                 institution: '',
@@ -43,13 +41,11 @@ export class UserForm extends Component {
                 degree: '',
             }],
 
-            num_skills: 1,
             mySkills: [{
                 num: 0,
                 skill: '',
             }],
 
-            num_awards: 1,
             myAwards: [{
                 num: 0,
                 award:'',
@@ -58,12 +54,7 @@ export class UserForm extends Component {
     }
 
     addHistory = e => {
-        const { num_history } = this.state;
-        this.setState({
-            num_history: num_history + 1
-        });
         const defaultItem = {
-            num: num_history,
             companyEmail: '',
             companyPosition: '',
             bulletPoints1: '',
@@ -81,12 +72,8 @@ export class UserForm extends Component {
     }
 
     addInstitute = e => {
-        const { num_institute } = this.state;
-        this.setState({
-            num_institute: num_institute + 1
-        });
+
         const defaultItem = {
-            num: num_institute,
             institution: '',
             gradDate: '',
             gpa: '',
@@ -102,12 +89,7 @@ export class UserForm extends Component {
     }
 
     addAward = e => {
-        const { num_awards } = this.state;
-        this.setState({
-            num_awards: num_awards + 1
-        });
         const defaultItem = {
-            num: num_awards,
             award: '',
         }
         this.setState(state => {
@@ -120,12 +102,7 @@ export class UserForm extends Component {
     }
 
     addSkill = e => {
-        const { num_skills } = this.state;
-        this.setState({
-            num_skills: num_skills + 1
-        });
         const defaultItem = {
-            num: num_skills,
             skill: '',
         }
         this.setState(state => {

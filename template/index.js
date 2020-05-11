@@ -4,8 +4,50 @@ module.exports = ({full_name, email, phone, linkedin, myItems: [{companyName, co
         gpa, degree,}], mySkills: [{skill,}], myAwards: [{ award:'',}]});*/
 
 module.exports = ({full_name, email, phone, linkedin, myItems, myEducation, mySkills, myAwards}) => {
+var educationHTML = '';
+myEducation.forEach(function(item, index) {
+    var htmlString = '';
+    htmlString = `<div class="col-12 offset-sm-1 mx-auto">
+        <p class="mb-0"><b class="bold-standout">${item.institution}</b> - ${item.gradDate}</p>
+        <p class=""><em>${item.degree}</em> (GPA: ${item.gpa})</p>
+    </div>
+`;
+    educationHTML = educationHTML.concat(htmlString);
+})
+    var workHTML = '';
+    myItems.forEach(function(item, index) {
+        var htmlString = '';
+        htmlString = `<div class="col-12 mx-auto">
+                <p class="mb-0"><b class="bold-standout">${item.companyName}</b> ${item.companyPosition} (${item.dates})</p>
+                <ul class="bullet-text">
+                  <li style="list-style: disc"> ${item.bulletPoints1}</li>
+                  <li style="list-style: disc"> ${item.bulletPoints2}</li>
+                  <li style="list-style: disc"> ${item.bulletPoints3}</li>
+                  <li style="list-style: disc"> ${item.bulletPoints4}</li>
+                </ul>
+            </div>`;
+        workHTML = workHTML.concat(htmlString);
+    });
 
-    return `
+    var skillsHTML = `<div class="col-12 mx-auto">
+        <ul class="bullet-text mx-auto">`
+    mySkills.forEach(function(item, index) {
+        var htmlString = '';
+        htmlString = `<li style="list-style: disc"> ${item.skill}</li>`
+        skillsHTML = skillsHTML.concat(htmlString)
+    });
+    skillsHTML = skillsHTML.concat(`</ul></div>`);
+
+    var awardHTML = `<div class="col-12 mx-auto">
+        <ul class="bullet-text mx-auto">`
+    myAwards.forEach(function(item, index) {
+        var htmlString = '';
+        htmlString = `<li style="list-style: disc"> ${item.award}</li>`
+        awardHTML = awardHTML.concat(htmlString)
+    });
+    awardHTML = awardHTML.concat(`</ul></div>`);
+
+   var fullString  = `
         <!doctype html>
         <html>
         <head>
@@ -42,7 +84,7 @@ module.exports = ({full_name, email, phone, linkedin, myItems, myEducation, mySk
             font-family: "Georgia";
         }
         
-        .lead {
+        p {
         font-size: 2em;
         }
         
@@ -51,82 +93,70 @@ module.exports = ({full_name, email, phone, linkedin, myItems, myEducation, mySk
         }
         
         ul.bullet-text li {
-        font-size:1.5em;
+        font-size:2.0em;
         }
         
         .mb-0 {
         margin-bottom: 0;
         }
         
+        .bold-standout {
+          font-weight: 600;
+          font-size: 1.25em;
+        }
+        
+        .banner-pad {
+        padding: 1.5rem;
+        }
+        
+        .ml-3 {
+          margin-left: 3em;
+        }
+        
+        .mr-3 {
+          margin-right: 3em;
+        }
+        
     </style>
 
     </head>
-    <body>
+    <body >
 
-        <div class="col-10 offset-sm-1 mx-auto">
+        <div class="col-11 ml-3 mr-3 mx-auto">
             <br/><br/>
             <div class="row text-center">
                 <div class="col-lg-6">
                     <h1><b>${full_name}</b></h1>
-                    <p class="lead email"><strong>Email:</strong> ${email}</p>
-                    <p class="lead mb-0"><strong>Contact:</strong> ${phone}</p>
-                    <p class="lead"><strong>LinkedIn:</strong> ${linkedin}</p>
+                    <p class="email"><strong>Email:</strong> ${email}</p>
+                    <p class="mb-0"><strong>Contact:</strong> ${phone}</p>
+                    <p class=""><strong>LinkedIn:</strong> ${linkedin}</p>
                 </div>
             </div>
             <hr/>
             
-            <div class="col-12 mx-auto bg-light">
-                <h3><b>Education</b></h3>
+            <div class="col-12 banner-pad mx-auto bg-light">
+                <h2><b>Education</b></h2>
             </div>
-            <div class="col-12 offset-sm-1 mx-auto">
-                <p class="lead mb-0"><b class="bold">${myEducation[0].institution}</b> ${myEducation[0].gradDate}</p>
-                 <p class="lead"><em>${myEducation[0].degree}</em> (GPA: ${myEducation[0].gpa})</p>
-            </div>
+            ` + educationHTML + `
         
-            <div class="col-12 mx-auto bg-light">
-                <h3><b>Experience</b></h3>
+            <div class="col-12 banner-pad mx-auto bg-light">
+                <h2><b>Experience</b></h2>
+            </div> ` + workHTML + `
+   
+            <div class="col-12 banner-pad mx-auto bg-light">
+                <h2><b>Skills</b></h2>
+            </div>`
+            + skillsHTML + `
+            <div class="col-12 banner-pad mx-auto bg-light">
+                <h2><b>Awards</b></h2>
             </div>
-            <div class="col-12 mx-auto">
-                <p class="lead mb-0"><b class="bold">${myItems[0].companyName}</b> ${myItems[0].companyPosition} (${myItems[0].dates})</p>
-                <ul class="bullet-text">    
-                  <li style="list-style: disc"> ${myItems[0].bulletPoints1}</li>
-                  <li style="list-style: disc"> ${myItems[0].bulletPoints2}</li>
-                  <li style="list-style: disc"> ${myItems[0].bulletPoints3}</li>
-                  <li style="list-style: disc"> ${myItems[0].bulletPoints4}</li>
-                </ul>
-            </div>
-        
-            <div class="col-12 mx-auto bg-light">
-                <h3><b>Skills</b></h3>
-            </div>
-            <div class="col-12 mx-auto">
-                <ul class="bullet-text mx-auto">    
-                  <li style="list-style: disc"> ${mySkills[0].skill}</li>
-                  <li style="list-style: disc"> ${mySkills[1].skill}</li>
-                </ul>
-               <ul class="bullet-text mx-auto">  
-                  <li style="list-style: disc"> ${mySkills[0].skill}</li>
-                  <li style="list-style: disc"> ${mySkills[1].skill}</li>
-               </ul>
-            </div>
-        
-            <div class="col-12 mx-auto bg-light">
-                <h3><b>Awards</b></h3>
-            </div>
-             <div class="col-12 mx-auto">
-                <ul class="bullet-text mx-auto">  
-                  <li style="list-style: disc"> ${myAwards[0].award}</li>
-                  <li style="list-style: disc"> ${myAwards[1].award}</li>
-                </ul>
-                <ul class="bullet-text mx-auto">  
-                  <li style="list-style: disc"> ${myAwards[0].award}</li>
-                  <li style="list-style: disc"> ${myAwards[1].award}</li>
-                 </ul>
-             </div>
+             ` + awardHTML + `
         </div>
     </body>
 </html>
 `
+    console.log(fullString);
+    return fullString;
 }
 
 
