@@ -19,7 +19,7 @@ export class Personal extends Component {
                 <div className="question-container col-xs-12">
 
                     <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>
-                        <FormInput  placeholder="Full Name" size="lg"  value={values.full_name} type="text" name="full_name"  onChange={handleChange}/>
+                        <FormInput  placeholder="Full Name" size="lg"  value={values.fullName} type="text" name="fullName"  onChange={handleChange}/>
                         <i className="glyphicon glyphicon-user"></i>
                     </div>
                     <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>

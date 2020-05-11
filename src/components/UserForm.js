@@ -15,9 +15,8 @@ export class UserForm extends Component {
     constructor() {
         super();
         this.state = {
-            pdfEnabled: false,
             step: 1,
-            full_name: '',
+            fullName: '',
             email: '',
             phone: '',
             linkedin: '',
@@ -138,7 +137,6 @@ export class UserForm extends Component {
     }
 
     createAndDownloadPdf = () => {
-        console.log("CLICK");
         axios.post('http://localhost:5000/create-pdf', this.state)
        .then(() => axios.get('http://localhost:5000/fetch-pdf', { responseType: 'blob' }))
        .then((res) => {
@@ -194,7 +192,7 @@ export class UserForm extends Component {
 
 
     render() {
-        const { step, pdfEnabled } = this.state;
+        const { step } = this.state;
         switch (step) {
             case 1:
                 var stepForm =  <Personal values={this.state}
