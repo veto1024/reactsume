@@ -8,7 +8,7 @@ export class WorkHistoryList extends Component {
     render() {
         const {values, handleChange, addHistory} = this.props;
         const edItems = values.myItems.map(item => (
-            <div key={item.num.toString()}  className="col-xs-12">
+            <div key={item.num.toString()}  className="col-xs-12 well">
                 <WorkHistoryItem values={values} num={item.num} handleChange={handleChange} />
             </div>
         ));

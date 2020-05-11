@@ -8,7 +8,7 @@ export class EducationHistoryList extends Component {
     render() {
         const {values, handleChange, addInstitute} = this.props;
         const workItems = values.myEducation.map(item => (
-            <div key={item.num.toString()}  className="col-xs-12">
+            <div key={item.num.toString()}  className="col-xs-12  well">
                 <EducationListItem values={values} num={item.num} handleChange={handleChange} />
             </div>
         ));
