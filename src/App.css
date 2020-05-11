@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+
+label {
+  font-size:2em;
+  float:left;
+  margin-bottom:.5em
+}
+
+.section-header {
+  font-size:3em;
+}
+
+.red-back {
+  background-color: #bd4242;
+  height:60em;
+}
+
+.red-back .form-side-button {
+  text-align: right;
+  height:4em;
+  font-size: 2em;
+  float:right;
+  font-weight: 800;
+  color:white;
+}
+
+.form-side-button.active {
+  background-color: #bd4242;
+  color: #bd4242 !important;
+  border: white solid 2px;
+  border-radius: 5px;
+}
+.form-side-button.inactive {
+  background-color: #bd4242;
+}
+
+.form-side-button:first-of-type {
+  margin-top: 1em;
+}
+/* enable absolute positioning */
+.inner-addon {
+  position: relative;
+}
+
+/* style glyph */
+.inner-addon .glyphicon {
+  position: absolute;
+  font-size: 2em;
+  padding-top:.3em;
+  padding-left: 1em;
+  pointer-events: none;
+}
+
+/* align glyph */
+.left-addon .glyphicon  { left:  0px;}
+.right-addon .glyphicon { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  3em; }
+.right-addon input { padding-right: 3em; }
+
+input::placeholder {
+  font-size: 1.5em;
+  opacity: .5;
+  font-weight: 800;
+}
+
+input:focus::placeholder {
+  color:transparent;
+}
