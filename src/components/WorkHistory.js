@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {WorkHistoryList} from "./WorkHistoryList";
+import {Button} from "shards-react";
 
 export class WorkHistory extends Component {
 
@@ -15,8 +16,8 @@ export class WorkHistory extends Component {
                         </div>
                     </div>
                     <div className="action-container col-xs-12">
-                        <button type="button" className="btn btn-success" onClick={prevStep}>Previous</button>
-                        <button type="submit" className="btn btn-success" onSubmit={nextStep}>Next</button>
+                        <Button size="lg" type="button" theme={"warning"}  onClick={prevStep}>Previous</Button>
+                        <Button size="lg" type="submit" theme={"success"} onSubmit={nextStep}>Next</Button>
                     </div>
                 </form>
             </div>

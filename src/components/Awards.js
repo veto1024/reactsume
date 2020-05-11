@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {SkillList} from "./SkillList";
 import {AwardList} from "./AwardList";
+import {Button} from "shards-react";
 
 
 export class Awards extends Component {
@@ -15,8 +16,8 @@ export class Awards extends Component {
                     </div>
                     <AwardList values={values} handleChange={handleChange} addAward={addAward}/>
                     <div className="action-container col-xs-12">
-                        <button type="button" className="btn btn-success" onClick={prevStep}>Previous</button>
-                        <button type="submit" className="btn btn-success" onSubmit={nextStep}>Next</button>
+                        <Button size="lg" theme={"warning"}  type="button"  onClick={prevStep}>Previous</Button>
+                        <Button size="lg" theme={"success"}  type="submit"  onSubmit={nextStep}>Next</Button>
                     </div>
                 </form>
             </div>

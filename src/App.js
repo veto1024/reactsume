@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
         <div className="App">
-          <div className="col-xs-12 col-md-8 col-md-offset-2 well">
+          <div className="col-xs-12">
             <p className="resume-header">OMD Editing Resume Builder</p>
             <UserForm />
           </div>

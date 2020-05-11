@@ -36,7 +36,7 @@ export class Personal extends Component {
                     </div>
                 </div>
                 <div className="action-container col-xs-12">
-                    <Button size="lg"  type="submit">Next</Button>
+                    <Button size="lg" theme={"success"}  type="submit">Next</Button>
                 </div>
                 </form>
             </div>
