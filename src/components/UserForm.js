@@ -239,14 +239,14 @@ export class UserForm extends Component {
         }
         return (
             <div>
-                <div className="red-back col-xs-2">
+                <div className="red-back col-xs-3">
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 1) ? "active" : "inactive")} >Personal</Button>
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 2) ? "active" : "inactive")} >Work History</Button>
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 3) ? "active" : "inactive")} >Education</Button>
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 4) ? "active" : "inactive")} >Skills</Button>
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 5) ? "active" : "inactive")} >Awards</Button>
                 </div>
-                <div className="col-xs-10">
+                <div className="col-xs-9">
                     {stepForm}
                 </div>
             </div>
