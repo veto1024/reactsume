@@ -9,7 +9,6 @@ class App extends Component {
     return (
         <div className="App">
           <div className="col-xs-12">
-            <p className="resume-header">OMD Editing Resume Builder</p>
             <UserForm />
           </div>
         </div>

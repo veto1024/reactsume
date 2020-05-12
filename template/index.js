@@ -7,11 +7,12 @@ module.exports = ({fullName, email, phone, linkedin, myItems, myEducation, mySki
 var educationHTML = '';
 myEducation.forEach(function(item, index) {
     var htmlString = '';
+    var gpaString = '' ? (item.gpa === '') : "(GPA: " + item.gpa.toString() + ')';
     htmlString = `<div class="col-12 offset-sm-1 mx-auto">
         <p class="mb-0"><b class="bold-standout">${item.institution}</b> - ${item.gradDate}</p>
-        <p class=""><em>${item.degree}</em> (GPA: ${item.gpa})</p>
+        <p class=""><em>${item.degree}</em> ` + gpaString + `</p>
     </div>
-`;
+    `;
     educationHTML = educationHTML.concat(htmlString);
 })
     var workHTML = '';
@@ -128,8 +129,8 @@ myEducation.forEach(function(item, index) {
                 <div class="col-lg-6">
                     <h1><b>${fullName}</b></h1>
                     <p class="email"><strong>Email:</strong> ${email}</p>
-                    <p class="mb-0"><strong>Contact:</strong> ${phone}</p>
-                    <p class=""><strong>LinkedIn:</strong> ${linkedin}</p>
+                    ${phone ? '<p class="mb-0"><strong>Contact #:</strong> ' + phone + ' </p>' : ''}
+                    ${linkedin ? '<p class=""><strong>LinkedIn:</strong> ' + linkedin + ' </p>' : ''}
                 </div>
             </div>
             <hr/>

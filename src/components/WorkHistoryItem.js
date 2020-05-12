@@ -28,19 +28,19 @@ export class WorkHistoryItem extends Component {
                     <i className="glyphicon glyphicon-calendar"></i>
                 </div>
                 <div className='col-xs-12 col-xl-8 col-xl-offset-2  inner-addon left-addon'>
-                    <FormInput size="lg"  placeholder="Provide 3-4 short sentences describing your position." data-key={num} type="text" name={bullets.concat("1")} className="form-control" onChange={handleChange}/>
+                    <FormInput size="lg" value={values.myItems[num].bulletPoints1 ? values.myItems[num].bulletPoints1 : ''} placeholder="Provide 3-4 short sentences describing your position." data-key={num} type="text" name={bullets.concat("1")} className="form-control" onChange={handleChange}/>
                     <i className="glyphicon glyphicon-check"></i>
                 </div>
                 <div className='col-xs-12 col-xl-8 col-xl-offset-2  inner-addon left-addon'>
-                    <FormInput size="lg"  placeholder="If possible, be quantitative about what you accomplished." data-key={num} type="text" name={bullets.concat("2")} className="form-control" onChange={handleChange}/>
+                    <FormInput size="lg"  value={values.myItems[num].bulletPoints2 ? values.myItems[num].bulletPoints2 : ''} placeholder="If possible, be quantitative about what you accomplished." data-key={num} type="text" name={bullets.concat("2")} className="form-control" onChange={handleChange}/>
                     <i className="glyphicon glyphicon-check"></i>
                 </div>
                 <div className='col-xs-12 col-xl-8 col-xl-offset-2  inner-addon left-addon'>
-                    <FormInput size="lg"  placeholder="For example, trained 30 staff members monthly sounds a lot" data-key={num} type="text" name={bullets.concat("3")} className="form-control" onChange={handleChange}/>
+                    <FormInput size="lg"  value={values.myItems[num].bulletPoints3 ? values.myItems[num].bulletPoints3 : ''} placeholder="For example, trained 30 staff members monthly sounds a lot" data-key={num} type="text" name={bullets.concat("3")} className="form-control" onChange={handleChange}/>
                     <i className="glyphicon glyphicon-check"></i>
                 </div>
                 <div className='col-xs-12 col-xl-8 col-xl-offset-2 inner-addon left-addon'>
-                    <FormInput size="lg"  placeholder='better than "trained staff members".' data-key={num} type="text" name={bullets.concat("4")} className="form-control" onChange={handleChange}/>
+                    <FormInput size="lg"  value={values.myItems[num].bulletPoints4 ? values.myItems[num].bulletPoints4 : ''} placeholder='better than "trained staff members".' data-key={num} type="text" name={bullets.concat("4")} className="form-control" onChange={handleChange}/>
                     <i className="glyphicon glyphicon-check"></i>
                 </div>
             </div>

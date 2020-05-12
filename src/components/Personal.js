@@ -14,7 +14,10 @@ export class Personal extends Component {
             <div className="col-xs-12">
                 <form onSubmit={this.continue}>
                 <div className="col-xs-12">
-                    <p className="section-header">Let's get some basic information first!</p>
+                    <p>Just getting started and want help building a resume? Try out our FREE Resume Builder!</p>
+                    <p>Check out a <a href="/external/sample-resume.pdf">sample</a>. Have trouble? Contact us and let us help out!</p>
+                    <p>Concerned about your privacy? Don't worry! None of the information gathered here is retained by OMD Editing.</p>
+                    <p className="section-header">Let's get started with some basic information!</p>
                 </div>
                 <div className="question-container col-xs-12">
 

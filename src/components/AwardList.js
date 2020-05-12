@@ -11,7 +11,7 @@ export class AwardList extends Component {
         const {values, handleChange, addAward} = this.props;
         const awardItems = values.myAwards.map(item => (
             <div key={item.num.toString()}  className="col-xs-12">
-                <AwardItem num={item.num} handleChange={handleChange} />
+                <AwardItem num={item.num} values={values} handleChange={handleChange} />
             </div>
         ));
         return (

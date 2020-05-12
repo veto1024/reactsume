@@ -10,7 +10,7 @@ export class SkillList extends Component {
         const {values, handleChange, addSkill} = this.props;
         const workItems = values.mySkills.map(item => (
             <div key={item.num.toString()}  className="col-xs-12 ">
-                <SkillItem num={item.num} handleChange={handleChange} />
+                <SkillItem values={values} num={item.num} handleChange={handleChange} />
             </div>
         ));
         return (

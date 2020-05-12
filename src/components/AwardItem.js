@@ -9,7 +9,7 @@ export class AwardItem extends Component {
             <div className="question-container col-xs-12">
                 <div className='col-xs-12 col-xl-8  col-xl-offset-2 inner-addon left-addon'>
                 <FormGroup inline>
-                    <FormInput placeholder="Award/Achievement" size="lg" data-key={num} type="text" name={award} className="form-control" onChange={handleChange} />
+                    <FormInput placeholder="Award/Achievement" value={values.myAwards[num].award} size="lg" data-key={num} type="text" name={award} className="form-control" onChange={handleChange} />
                     <i className="glyphicon glyphicon-star"></i>
                 </FormGroup>
                 </div>
