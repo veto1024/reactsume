@@ -22,7 +22,7 @@ export class Complete extends Component {
                     <li>Starting at $49.99!</li>
                 </ul>
             </div>
-            <div id="linkedin-ad-well" className="col-xs-12 col-md-4 well">
+            <div id="linkedin-ad-well" className="col-xs-12 col-xl-4 well">
                 <h2>Check out our LinkedIn Profile Editing Service</h2>
                 <p>How long has it been since you updated your LinkedIn profile? Did you know that research has shown that LinkedIn
                     is 40% more effective than online job boards? OMD Editing offers affordable LinkedIn profile
