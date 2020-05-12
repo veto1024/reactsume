@@ -12,7 +12,7 @@ export class Awards extends Component {
             <div className="col-xs-12">
                 <form onSubmit={this.props.nextStep}>
                     <div className="col-xs-12">
-                        <p className="section-header">Tell employers about important awards that you've received!</p>
+                        <p className="section-header">Tell employers about important awards and achievements that you've received!</p>
                     </div>
                     <AwardList values={values} handleChange={handleChange} addAward={addAward}/>
                     <div className="action-container col-xs-12">

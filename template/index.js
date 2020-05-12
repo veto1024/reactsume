@@ -135,13 +135,13 @@ myEducation.forEach(function(item, index) {
             <hr/>
             
             <div class="col-12 banner-pad mx-auto bg-light">
-                <h2><b>Education</b></h2>
+                <h2><b>Experience</b></h2>
             </div>
-            ` + educationHTML + `
+            ` + workHTML + `
         
             <div class="col-12 banner-pad mx-auto bg-light">
-                <h2><b>Experience</b></h2>
-            </div> ` + workHTML + `
+                <h2><b>Education</b></h2>
+            </div> ` + educationHTML + `
    
             <div class="col-12 banner-pad mx-auto bg-light">
                 <h2><b>Skills</b></h2>
