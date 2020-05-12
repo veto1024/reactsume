@@ -246,7 +246,7 @@ export class UserForm extends Component {
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 4) ? "active" : "inactive")} >Skills</Button>
                     <Button block outline theme="light" className={'form-side-button ' + ((step === 5) ? "active" : "inactive")} >Awards</Button>
                 </div>
-                <div className="col-xs-12 col-md-9">
+                <div className="col-xs-12 col-sm-8">
                     {stepForm}
                 </div>
             </div>

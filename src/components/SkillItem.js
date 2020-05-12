@@ -7,7 +7,7 @@ export class SkillItem extends Component {
         var skill = "skill";
         return(
             <div className="question-container col-xs-12">
-                <div className='col-xs-12 inner-addon left-addon'>
+                <div className='col-xs-12 col-xl-8 col-xl-offset-2 inner-addon left-addon'>
                 <FormGroup inline>
                     <FormInput placeholder="Skill" size="lg" data-key={num} type="text" name={skill} className="form-control" onChange={handleChange} />
                     <i className="glyphicon glyphicon-chevron-up"></i>

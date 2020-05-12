@@ -18,19 +18,19 @@ export class Personal extends Component {
                 </div>
                 <div className="question-container col-xs-12">
 
-                    <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>
+                    <div className='col-xs-12 col-xl-offset-2 col-xl-8 inner-addon left-addon'>
                         <FormInput  placeholder="Full Name" size="lg"  value={values.fullName} type="text" name="fullName"  onChange={handleChange}/>
                         <i className="glyphicon glyphicon-user"></i>
                     </div>
-                    <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>
+                    <div className='col-xs-12 col-xl-offset-2 col-xl-8 inner-addon left-addon'>
                         <FormInput size="lg" placeholder="Email Address" type="email" value={values.email} name="email" className="" onChange={handleChange}/>
                         <i className="glyphicon glyphicon-envelope"></i>
                     </div>
-                    <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>
+                    <div className='col-xs-12 col-xl-offset-2 col-xl-8 inner-addon left-addon'>
                         <FormInput type="tel" placeholder="Contact #" size="lg" value={values.phone} name="phone" className="form-control" onChange={handleChange}/>
                         <i className="glyphicon glyphicon-phone"></i>
                     </div>
-                    <div className='col-xs-12 col-md-offset-2 col-md-8 inner-addon left-addon'>
+                    <div className='col-xs-12 col-xl-offset-2 col-xl-8 inner-addon left-addon'>
                         <FormInput size="lg" placeholder="LinkedIn Profile" type="url" value={values.linkedin}  name="linkedin" className="form-control" onChange={handleChange}/>
                         <i className="glyphicon glyphicon-list-alt"></i>
                     </div>
