@@ -13,7 +13,7 @@ export class WorkHistory extends Component {
                         <div className="col-xs-12">
                             <p className="section-header">Let's talk work history! For each work experience, provide the employer name, position, date of employment,
                                 and, optionally, the location of the employer. Feel free to use a Month Year format (e.g., June 2020)
-                                or simply provide the year (e.g., 2020). Enter your present/most-recent position first.</p><p className="md-hide"> Additionally, include up to 4 bullet points describing your work.</p>
+                                or simply provide the year (e.g., 2020). Enter your present/most-recent positions first.</p><p className="md-hide"> Additionally, include up to 4 bullet points describing your work.</p>
                         <WorkHistoryList values={values} handleChange={handleChange} addHistory={addHistory}/>
                         </div>
                     </div>

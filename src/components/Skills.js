@@ -11,7 +11,7 @@ export class Skills extends Component {
             <div className="col-xs-12">
                 <form onSubmit={this.props.nextStep}>
                     <div className="col-xs-12">
-                        <p className="section-header">Jot down your skills!</p>
+                        <p className="section-header">Jot down your skills! A pro at Adobe Premiere? Excel at Microsoft Excel? Let employers know!</p>
                     </div>
                     <SkillList values={values} handleChange={handleChange} addSkill={addSkill}/>
                     <div className="action-container col-xs-12">
