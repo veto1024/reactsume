@@ -141,8 +141,8 @@ export class UserForm extends Component {
     }
 
     createAndDownloadPdf = () => {
-        axios.post('http://localhost:5000/create-pdf', this.state)
-       .then(() => axios.get('http://localhost:5000/fetch-pdf', { responseType: 'blob' }))
+        axios.post('/create-pdf', this.state)
+       .then(() => axios.get('/fetch-pdf', { responseType: 'blob' }))
        .then((res) => {
           const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
 
