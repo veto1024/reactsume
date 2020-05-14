@@ -4,14 +4,33 @@ import {Button, NavLink} from "shards-react";
 
 
 export class Complete extends Component {
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+    this.state = {
+      loader: false,
+    }
+  }
+
+  onClick() {
+    const {success} = this.props;
+    success();
+    const currentState = this.state.loader;
+    if (!currentState){
+      this.setState({
+        loader: !currentState
+      });
+    }
+  }
 
     render() {
-        const {success} = this.props;
+
         return (
             <div>
             <div className="col-xs-12">
                 <h2>Generate your PDF here!</h2>
-                <Button size="lg" onClick={success}>Generate PDF</Button>
+                <Button size="lg" onClick={this.onClick}>Generate PDF</Button>
+                <p className={this.state.loader ? 'loading-text' : 'hidden'} id="pdf-gen-loading">Your resume is being created...</p>
             </div>
             <div id="resume-service" className="col-xs-12 col-md-8">
                 <p>Like your resume but want to kick it up a notch? Check out On My Desk Editing's Resume Editing service!</p>

@@ -1,11 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const pdf = require('html-pdf');
 const cors = require('cors');
 const path = require('path');
-
+const puppeteer = require('puppeteer');
 const pdfTemplate = require('./template');
-
+const fs = require('fs');
 const app = express();
 
 const port = process.env.PORT || 5000;
@@ -15,25 +14,41 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+function delay(time) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, time)
+  });
+}
 // POST Route - PDF generation and fetching of the data
+async function printPDF(content) {
+  const browser = await puppeteer.launch({ args: ["--no-sandbox",
+      "--disable-setuid-sandbox"],
+    headless: true });
+  const page = await  browser.newPage();
+
+  await page.setContent(content);
+
+  await page.pdf({path: "OMD-Resume.pdf", printBackground: true, format: 'A4' }).catch(error => console.log("ERROR" + error));
+  await browser.close();
+
+}
 
 app.post('/create-pdf', (req, res) => {
-    pdf.create(pdfTemplate(req.body), {}).toFile('Resume.pdf', (err) => {
-        if(err){
-            res.send(Promise.reject());
-            console.log(err);
-        }
-
-        res.send(Promise.resolve());
-        console.log('Success');
-    });
+   const pdfContent = pdfTemplate(req.body);
+   printPDF(pdfContent).then(
+     res.send(Promise.resolve())
+   )
 });
 
 
 // Get - Send generated pdf to the client
 app.get('/fetch-pdf', (req,res) => {
-    res.sendFile(`${__dirname}/Resume.pdf`);
+  setTimeout(function () {
+    res.sendFile(`${__dirname}/OMD-Resume.pdf`);
+  }, 2000);
+
 });
+
 
 // Serve static assets if in production
 if(process.env.NODE_ENV === 'production'){

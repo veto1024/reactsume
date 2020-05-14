@@ -141,11 +141,10 @@ export class UserForm extends Component {
     }
 
     createAndDownloadPdf = () => {
-        axios.post('/create-pdf', this.state)
-       .then(() => axios.get('/fetch-pdf', { responseType: 'blob' }))
+        axios.post('https://www.omd-editing.com/create-pdf', this.state)
+       .then(() => axios.get('https://www.omd-editing.com/fetch-pdf', { responseType: 'blob' }))
        .then((res) => {
           const pdfBlob = new Blob([res.data], { type: 'application/pdf' });
-
           saveAs(pdfBlob, 'Resume.pdf');
        })
 }

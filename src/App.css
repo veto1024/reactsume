@@ -105,3 +105,12 @@ input::placeholder {
 input:focus::placeholder {
   color:transparent;
 }
+
+.hidden {
+  display:none;
+}
+
+.loading-text {
+  color:green;
+  display:inline;
+}

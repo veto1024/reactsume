@@ -68,6 +68,11 @@ myEducation.forEach(function(item, index) {
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
 
         <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+        html, body {
+          font-family: 'Open Sans', sans-serif;
+        }
         html{
             zoom: 0.55;
         }
@@ -81,43 +86,40 @@ myEducation.forEach(function(item, index) {
         .email{
             margin-bottom: 0;
         }
-        body{
-            font-family: "Georgia";
-        }
-        
+
         p {
         font-size: 2em;
         }
-        
+
         .bold {
         font-weight: 800;
         }
-        
+
         ul.bullet-text li {
         font-size:2.0em;
         }
-        
+
         .mb-0 {
         margin-bottom: 0;
         }
-        
+
         .bold-standout {
           font-weight: 600;
           font-size: 1.25em;
         }
-        
+
         .banner-pad {
         padding: 1.5rem;
         }
-        
+
         .ml-3 {
           margin-left: 3em;
         }
-        
+
         .mr-3 {
           margin-right: 3em;
         }
-        
+
     </style>
 
     </head>
@@ -134,16 +136,16 @@ myEducation.forEach(function(item, index) {
                 </div>
             </div>
             <hr/>
-            
+
             <div class="col-12 banner-pad mx-auto bg-light">
                 <h2><b>Experience</b></h2>
             </div>
             ` + workHTML + `
-        
+
             <div class="col-12 banner-pad mx-auto bg-light">
                 <h2><b>Education</b></h2>
             </div> ` + educationHTML + `
-   
+
             <div class="col-12 banner-pad mx-auto bg-light">
                 <h2><b>Skills</b></h2>
             </div>`
@@ -156,7 +158,6 @@ myEducation.forEach(function(item, index) {
     </body>
 </html>
 `
-    console.log(fullString);
     return fullString;
 }
 
