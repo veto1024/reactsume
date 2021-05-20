@@ -13,7 +13,7 @@
     "express": "^4.17.1",
     "file-saver": "^2.0.2",
     "fs": "0.0.1-security",
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "jquery": "^3.5.1",
     "path": "^0.12.7",
     "puppeteer": "^3.0.4",
